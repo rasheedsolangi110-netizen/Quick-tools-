@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick Tools - Free online tools</title>
+<meta name="description" content="Free online tools: word counter, percentage calculator, age calculator and password generator.">
+<meta name="theme-color" content="#1f3a34">
+
+<!-- AD NETWORK SCRIPT: yahan apne ad network ka main script paste karein (head mein) -->
+
+<style>
+  :root {
+    --bg: #eef2ee;
+    --ink: #18231f;
+    --muted: #55655e;
+    --panel: #ffffff;
+    --line: #cfd9d3;
+    --accent: #1f3a34;
+    --accent-ink: #ffffff;
+    --hi: #f2c14e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121a17;
+      --ink: #e6efe9;
+      --muted: #9db0a6;
+      --panel: #1a2621;
+      --line: #2c3c35;
+      --accent: #f2c14e;
+      --accent-ink: #18231f;
+      --hi: #f2c14e;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 28px 0 8px; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2rem; margin: 0 0 4px; }
+  header p { margin: 0; color: var(--muted); }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0; }
+  nav a {
+    padding: 8px 14px; border: 1px solid var(--line); border-radius: 20px;
+    color: var(--ink); text-decoration: none; background: var(--panel); font-size: .95rem;
+  }
+  nav a:hover, nav a:focus-visible { border-color: var(--accent); outline: 2px solid var(--hi); outline-offset: 1px; }
+
+  .ad {
+    margin: 18px 0; min-height: 90px; display: flex; align-items: center; justify-content: center;
+    border: 1px dashed var(--line); color: var(--muted); font-size: .8rem; border-radius: 8px;
+  }
+
+  .ad a { color: var(--ink); font-size: .95rem; padding: 12px; text-align: center; width: 100%; }
+
+  section.tool {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 20px; margin: 18px 0; scroll-margin-top: 12px;
+  }
+  section.tool h2 { font-family: Georgia, serif; margin: 0 0 4px; font-size: 1.35rem; }
+  section.tool > p { margin: 0 0 14px; color: var(--muted); font-size: .95rem; }
+  label { display: block; font-size: .9rem; margin: 10px 0 4px; }
+  input, textarea, select {
+    width: 100%; padding: 10px; font: inherit; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  textarea { min-height: 130px; resize: vertical; }
+  input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 2px solid var(--hi); outline-offset: 1px;
+  }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .row > * { flex: 1 1 140px; }
+  button {
+    margin-top: 12px; padding: 10px 18px; font: inherit; cursor: pointer;
+    background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 6px;
+  }
+  .out { margin-top: 12px; padding: 12px; background: var(--bg); border-radius: 6px; min-height: 44px; word-break: break-all; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin-top: 10px; }
+  .stats div { background: var(--bg); padding: 10px; border-radius: 6px; text-align: center; }
+  .stats b { display: block; font-size: 1.4rem; font-family: Georgia, serif; }
+  footer { padding: 24px 0 40px; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Quick Tools</h1>
+    <p>Free tools that work right in your browser. Nothing is uploaded.</p>
+  </header>
+
+  <nav aria-label="Tools">
+    <a href="#words">Word counter</a>
+    <a href="#percent">Percentage</a>
+    <a href="#age">Age calculator</a>
+    <a href="#password">Password generator</a>
+  </nav>
+
+  <!-- AD SLOT 1 (top banner): ad network ka banner code yahan paste karein -->
+  <div class="ad"><a href="https://www.profitableratecpmnetwork.com/v71hipgy?key=e05d8712e261a59942c7b9a944e42429" target="_blank" rel="noopener sponsored">Sponsored: tap to see today's offer</a></div>
+
+  <main>
+    <section class="tool" id="words">
+      <h2>Word counter</h2>
+      <p>Paste or type your text to count words and characters.</p>
+      <label for="wtext">Your text</label>
+      <textarea id="wtext" placeholder="Type or paste here"></textarea>
+      <div class="stats">
+        <div><b id="wc">0</b>Words</div>
+        <div><b id="cc">0</b>Characters</div>
+        <div><b id="sc">0</b>Sentences</div>
+        <div><b id="rt">0</b>Min to read</div>
+      </div>
+    </section>
+
+    <section class="tool" id="percent">
+      <h2>Percentage calculator</h2>
+      <p>Find a percentage of a number.</p>
+      <div class="row">
+        <div><label for="p1">Percent (%)</label><input id="p1" type="number" inputmode="decimal" value="15"></div>
+        <div><label for="p2">Of number</label><input id="p2" type="number" inputmode="decimal" value="2000"></div>
+      </div>
+      <button id="pbtn" type="button">Calculate</button>
+      <div class="out" id="pout" aria-live="polite"></div>
+    </section>
+
+    <!-- AD SLOT 2 (middle): doosra ad code yahan paste karein -->
+    <div class="ad"><a href="https://www.profitableratecpmnetwork.com/v71hipgy?key=e05d8712e261a59942c7b9a944e42429" target="_blank" rel="noopener sponsored">Sponsored: tap to see today's offer</a></div>
+
+    <section class="tool" id="age">
+      <h2>Age calculator</h2>
+      <p>Enter a date of birth to see the exact age.</p>
+      <label for="dob">Date of birth</label>
+      <input id="dob" type="date">
+      <button id="abtn" type="button">Calculate age</button>
+      <div class="out" id="aout" aria-live="polite"></div>
+    </section>
+
+    <section class="tool" id="password">
+      <h2>Password generator</h2>
+      <p>Creates a random password on your device.</p>
+      <div class="row">
+        <div><label for="plen">Length</label><input id="plen" type="number" min="6" max="64" value="16"></div>
+        <div>
+          <label for="pset">Characters</label>
+          <select id="pset">
+            <option value="all">Letters, numbers, symbols</option>
+            <option value="alnum">Letters and numbers</option>
+            <option value="num">Numbers only</option>
+          </select>
+        </div>
+      </div>
+      <button id="gbtn" type="button">Generate password</button>
+      <button id="cbtn" type="button">Copy</button>
+      <div class="out" id="gout" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- AD SLOT 3 (bottom): teesra ad code yahan paste karein -->
+  <div class="ad"><a href="https://www.profitableratecpmnetwork.com/v71hipgy?key=e05d8712e261a59942c7b9a944e42429" target="_blank" rel="noopener sponsored">Sponsored: tap to see today's offer</a></div>
+
+  <footer>
+    &copy; <span id="yr"></span> Quick Tools. All calculations run in your browser.
+  </footer>
+</div>
+
+<script>
+  // Word counter
+  const wtext = document.getElementById('wtext');
+  wtext.addEventListener('input', () => {
+    const t = wtext.value.trim();
+    const words = t ? t.split(/\s+/).length : 0;
+    const sentences = t ? (t.match(/[^.!?]+[.!?]*/g) || []).filter(s => s.trim()).length : 0;
+    document.getElementById('wc').textContent = words;
+    document.getElementById('cc').textContent = wtext.value.length;
+    document.getElementById('sc').textContent = sentences;
+    document.getElementById('rt').textContent = Math.ceil(words / 200);
+  });
+
+  // Percentage
+  document.getElementById('pbtn').addEventListener('click', () => {
+    const p = parseFloat(document.getElementById('p1').value);
+    const n = parseFloat(document.getElementById('p2').value);
+    const out = document.getElementById('pout');
+    if (isNaN(p) || isNaN(n)) { out.textContent = 'Enter both numbers.'; return; }
+    out.textContent = p + '% of ' + n + ' = ' + +((p / 100) * n).toFixed(4);
+  });
+
+  // Age
+  document.getElementById('abtn').addEventListener('click', () => {
+    const v = document.getElementById('dob').value;
+    const out = document.getElementById('aout');
+    if (!v) { out.textContent = 'Choose a date of birth.'; return; }
+    const b = new Date(v), now = new Date();
+    if (b > now) { out.textContent = 'Date of birth is in the future.'; return; }
+    let y = now.getFullYear() - b.getFullYear();
+    let m = now.getMonth() - b.getMonth();
+    let d = now.getDate() - b.getDate();
+    if (d < 0) { m--; d += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+    if (m < 0) { y--; m += 12; }
+    out.textContent = y + ' years, ' + m + ' months, ' + d + ' days';
+  });
+
+  // Password
+  const sets = {
+    all: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+?',
+    alnum: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+    num: '0123456789'
+  };
+  document.getElementById('gbtn').addEventListener('click', () => {
+    const len = Math.min(64, Math.max(6, parseInt(document.getElementById('plen').value) || 16));
+    const chars = sets[document.getElementById('pset').value];
+    const arr = new Uint32Array(len);
+    crypto.getRandomValues(arr);
+    document.getElementById('gout').textContent = Array.from(arr, x => chars[x % chars.length]).join('');
+  });
+  document.getElementById('cbtn').addEventListener('click', () => {
+    const t = document.getElementById('gout').textContent;
+    if (t && navigator.clipboard) navigator.clipboard.writeText(t);
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
